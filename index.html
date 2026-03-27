@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Endri Cleto | Senior IT Engineer</title>
+<title>Endri Cleto | Senior DevOps Engineer</title>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -102,7 +102,8 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
         }
-    </style></head>
+    </style>
+</head>
 <body class="bg-surface font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container" data-mode="connect">
 <!-- Top Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/15 shadow-sm no-print">
@@ -126,9 +127,10 @@
 </nav>
 <!-- Sidebar -->
 <aside class="fixed left-0 top-0 h-full w-72 z-40 bg-gradient-to-br from-[#002045] to-[#455f88] flex flex-col overflow-y-auto sidebar-scrollbar hidden lg:flex no-print shadow-2xl py-16">
-<div class="px-8 flex flex-col items-center text-center mb-10 mt-8">
+<!-- Adjusted top padding to move profile content lower as requested (~2cm / 48px to 64px range) -->
+<div class="px-8 flex flex-col items-center text-center mb-10 mt-20">
 <div class="w-32 h-32 rounded-full bg-white/10 flex items-center justify-center mb-6 overflow-hidden border-2 border-white/20 shadow-lg shrink-0">
-<img alt="Endri Cleto" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ujaOGL9oNN2lvRAbjmGylLpyiyO94yDF18JH5cb8DzuH-8qfqPHEFQw7iJie_L_VfnhcZJcvz9z3qj7icQyETjAM7aqyhmNB7ZrsgCRIu0At0EkCso5B1GM9DksrIMzo8BeXNA-I3_CFCcrE1imJkHyCKuFbnCY1Uv3stwf57j98-L1ipu33pH7ivhatqScTpfHDMYGBNcvjC-dPgMMEyy2jpI8lWeaZt32UFjQHfkvT6VuPnwcRmqxpnqkCywIyabR1CX6K7bq"/>
+<img alt="Endri Cleto" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujaOGL9oNN2lvRAbjmGylLpyiyO94yDF18JH5cb8DzuH-8qfqPHEFQw7iJie_L_VfnhcZJcvz9z3qj7icQyETjAM7aqyhmNB7ZrsgCRIu0At0EkCso5B1GM9DksrIMzo8BeXNA-I3_CFCcrE1imJkHyCKuFbnCY1Uv3stwf57j98-L1ipu33pH7ivhatqScTpfHDMYGBNcvjC-dPgMMEyy2jpI8lWeaZt32UFjQHfkvT6VuPnwcRmqxpnqkCywIyabR1CX6K7bq"/>
 </div>
 <h1 class="text-white font-headline font-extrabold tracking-tight text-2xl uppercase leading-tight">Endri Cleto</h1>
 <p class="text-white/70 font-label tracking-[0.2em] text-[10px] uppercase mt-2">Senior it Engineer</p>
@@ -194,9 +196,16 @@
 <div class="max-w-5xl mx-auto px-6 md:px-12">
 <!-- Hero Header -->
 <header class="mb-16">
-<div class="inline-block bg-primary-container text-on-primary-container py-1 rounded-md mb-6 font-label tracking-[0.2em] uppercase text-[12px] font-bold px-6">
-                Kubernetes | OpenShift | Azure | GitOps
-            </div>
+<div class="flex flex-wrap items-center gap-4 mb-6">
+<div class="inline-block bg-primary-container text-on-primary-container py-1 rounded-md font-label tracking-[0.2em] uppercase text-[12px] font-bold px-6">
+                    Kubernetes | OpenShift | Azure | GitOps
+                </div>
+<!-- Highlight for Azure Administrator Certified -->
+<div class="inline-flex items-center gap-2 bg-blue-600 text-white py-1 rounded-md font-label tracking-[0.15em] uppercase text-[11px] font-bold px-4 shadow-md animate-pulse">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    Azure Administrator Certified
+                </div>
+</div>
 <h2 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mb-8 leading-none">
                 ENGINEERING <br/>
 <span class="text-secondary">SCALABLE FUTURE</span>
@@ -214,13 +223,12 @@
 </a>
 <div class="flex items-center space-x-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-xl" data-icon="forum">forum</span>
-<span class="font-label text-xs uppercase tracking-widest">829-923-3056 (WhatsApp)</span>
+<span class="font-label text-xs uppercase tracking-widest">829-923-3056</span>
 </div>
 <div class="flex items-center space-x-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-xl" data-icon="pin_drop">pin_drop</span>
 <div>
-<p class="font-label text-xs uppercase tracking-widest">santo domingo, dn</p>
-<p class="font-label text-[9px] text-outline uppercase tracking-widest mt-0.5">República Santo Domingo</p>
+<p class="font-label text-xs uppercase tracking-widest">República Santo Domingo</p>
 </div>
 </div>
 </div>
@@ -235,25 +243,17 @@
 <span class="font-headline font-bold text-sm tracking-tight uppercase">Kubernetes / OpenShift</span>
 <span class="font-label text-[10px] text-secondary">98%</span>
 </div>
-<div class="flex justify-between items-end">
-<span class="font-headline font-bold text-sm tracking-tight uppercase">Virtualizacion | VMware | NUTANIX </span>
-<span class="font-label text-[10px] text-secondary">98%</span>
-</div>
-<div class="flex justify-between items-end">
-<span class="font-headline font-bold text-sm tracking-tight uppercase">Azure Administrator Certified </span>
-<span class="font-label text-[10px] text-secondary">98%</span>
-</div>
 <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
 <div class="h-full bg-primary" style="width: 98%;"></div>
 </div>
 </div>
 <div class="space-y-3">
 <div class="flex justify-between items-end">
-<span class="font-headline font-bold text-sm tracking-tight uppercase">Azure Ecosystem</span>
-<span class="font-label text-[10px] text-secondary">95%</span>
+<span class="font-headline font-bold text-sm tracking-tight uppercase">Virtualizacion | VMware | NUTANIX</span>
+<span class="font-label text-[10px] text-secondary">98%</span>
 </div>
 <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-primary" style="width: 95%;"></div>
+<div class="h-full bg-primary" style="width: 98%;"></div>
 </div>
 </div>
 <div class="space-y-3">
@@ -274,7 +274,23 @@
 <div class="h-full bg-primary" style="width: 88%;"></div>
 </div>
 </div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="font-headline font-bold text-sm tracking-tight uppercase">AZURE CLOUD / OFFICE 365</span>
+<span class="font-label text-[10px] text-secondary">90%</span>
 </div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 90%;"></div>
+</div>
+</div><div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="font-headline font-bold text-sm tracking-tight uppercase">ITIL</span>
+<span class="font-label text-[10px] text-secondary">85%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 85%;"></div>
+</div>
+</div></div>
 </section>
 <!-- Experience Section -->
 <section class="mb-24" id="experience">
@@ -566,7 +582,7 @@
 <span class="">Endri23@hotmail.com</span>
 </a>
 <span class="hidden md:block text-white/20">•</span>
-<a class="flex items-center space-x-2 font-label text-xs tracking-widest uppercase text-white hover:text-secondary-fixed transition-colors" href="https://wa.me/18299233056">
+<a class="flex items-center space-x-2 font-label text-xs tracking-widest uppercase text-white hover:text-secondary-fixed transition-colors" href="tel:+18299233056">
 <span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
 <span>829-923-3056</span>
 </a>
