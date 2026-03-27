@@ -1,3 +1,4 @@
+<!-- Senior DevOps Resume - PDF Print Ready -->
 <!DOCTYPE html>
 
 <html class="light" lang="en"><head>
@@ -8,9 +9,9 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Icons -->
+<!-- Icons & Tech Logos -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
 <!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -83,10 +84,38 @@
             vertical-align: middle;
         }
         @media print {
-            body { background: white !important; -webkit-print-color-adjust: exact; }
-            .no-print { display: none !important; }
-            .print-container { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
-            @page { size: A4; margin: 0; }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body {
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-container {
+                width: auto !important;
+                margin-left: 18rem !important;
+                padding-top: 2rem !important;
+            }
+            aside {
+                display: flex !important;
+                position: fixed !important;
+                height: 100% !important;
+                width: 18rem !important;
+                top: 0 !important;
+                left: 0 !important;
+                z-index: 50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .bg-primary, .bg-primary-container, .technical-gradient {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
         .technical-gradient {
             background: linear-gradient(135deg, #002045 0%, #455f88 100%);
@@ -94,269 +123,471 @@
         .ghost-border {
             border: 1px solid rgba(196, 198, 207, 0.15);
         }
-    </style>
-</head>
-<body class="bg-surface font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
-<!-- Top Navigation Shell -->
+        .sidebar-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+    </style></head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container" data-mode="connect">
+<!-- Top Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/15 shadow-sm no-print">
 <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
 <div class="text-xl font-bold tracking-tighter text-slate-900 font-headline uppercase">ENDRI CLETO</div>
 <div class="hidden md:flex space-x-8 font-headline font-bold tracking-tight uppercase text-sm">
-<a class="text-blue-600 border-b-2 border-blue-600 pb-1" href="#experience">Experience</a>
-<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#skills">Skills</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#experience">Experience</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#projects">Projects</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#skills-sidebar">Skills</a>
 <a class="text-slate-500 hover:text-slate-900 transition-colors" href="#certifications">Certifications</a>
 </div>
 <div class="flex items-center space-x-4">
-<button class="p-2 hover:bg-slate-100/50 rounded-lg transition-transform active:scale-95" onclick="window.print()" title="Download CV">
+<button class="p-2 hover:bg-slate-100/50 rounded-lg transition-transform active:scale-95" onclick="window.print()" title="Print / Save as PDF">
 <span class="material-symbols-outlined text-slate-900" data-icon="download">download</span>
 </button>
-<button class="p-2 hover:bg-slate-100/50 rounded-lg transition-transform active:scale-95">
+<a class="p-2 hover:bg-slate-100/50 rounded-lg transition-transform active:scale-95" href="mailto:Endri23@hotmail.com">
 <span class="material-symbols-outlined text-slate-900" data-icon="mail">mail</span>
-</button>
+</a>
 </div>
 </div>
 </nav>
-<!-- Side Navigation Shell (Desktop) -->
-<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-gradient-to-br from-[#002045] to-[#455f88] flex-col py-8 hidden lg:flex no-print shadow-2xl">
-<div class="px-6 mb-12">
-<div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 overflow-hidden border border-white/20">
-<img alt="Endri Cleto" class="w-full h-full object-cover" data-alt="Professional headshot of a technical architect in a sharp suit with neutral background and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_uxkFxTGPrROcEcCy8dnignUUnu66RImBhskL0uz5Bz-5glcwH4gUr1jCRSf9xlkfyzsIyqohd_eolGTwymBdGw_e6EztcmC0IFMWWFacLBflztUx1lSnlvX0dbC4GNe6PlECmfjz-s0KbDYWYIi3LElU_N3NF3P_SCkxmtMmdEjOT9b_4npsCdme9UTjJlklmzbFSdxh9foFQG4sF_Hj_tk05-5pR4pu3NzZ0csGrtBz4oQX1ENY2TjUsFsxvq0j-RmErL8onw"/>
+<!-- Sidebar -->
+<aside class="fixed left-0 top-0 h-full w-72 z-40 bg-gradient-to-br from-[#002045] to-[#455f88] flex flex-col py-10 overflow-y-auto sidebar-scrollbar hidden lg:flex no-print shadow-2xl">
+<div class="px-8 flex flex-col items-center text-center mb-12">
+<div class="w-24 h-24 rounded-full bg-white/10 flex items-center justify-center mb-6 overflow-hidden border-2 border-white/20 shadow-lg">
+<img alt="Endri Cleto" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_uxkFxTGPrROcEcCy8dnignUUnu66RImBhskL0uz5Bz-5glcwH4gUr1jCRSf9xlkfyzsIyqohd_eolGTwymBdGw_e6EztcmC0IFMWWFacLBflztUx1lSnlvX0dbC4GNe6PlECmfjz-s0KbDYWYIi3LElU_N3NF3P_SCkxmtMmdEjOT9b_4npsCdme9UTjJlklmzbFSdxh9foFQG4sF_Hj_tk05-5pR4pu3NzZ0csGrtBz4oQX1ENY2TjUsFsxvq0j-RmErL8onw"/>
 </div>
-<h1 class="text-white font-headline font-bold tracking-tight text-xl uppercase">Endri Cleto</h1>
-<p class="text-white/70 font-label tracking-widest text-[10px] uppercase">Technical Architect</p>
+<h1 class="text-white font-headline font-extrabold tracking-tight text-2xl uppercase leading-tight">Endri Cleto</h1>
+<p class="text-white/70 font-label tracking-[0.2em] text-[10px] uppercase mt-2">Senior it Engineer</p>
 </div>
-<nav class="flex-grow">
-<a class="flex items-center space-x-4 bg-white/10 text-white font-bold rounded-r-full py-3 px-6 transition-transform hover:translate-x-1" href="#experience">
-<span class="material-symbols-outlined" data-icon="work">work</span>
-<span class="font-label tracking-widest text-xs uppercase">Work</span>
-</a>
-<a class="flex items-center space-x-4 text-white/70 hover:text-white py-3 px-6 transition-all hover:translate-x-1" href="#skills">
-<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
-<span class="font-label tracking-widest text-xs uppercase">Terminal</span>
-</a>
-<a class="flex items-center space-x-4 text-white/70 hover:text-white py-3 px-6 transition-all hover:translate-x-1" href="#certifications">
-<span class="material-symbols-outlined" data-icon="verified">verified</span>
-<span class="font-label tracking-widest text-xs uppercase">Verified</span>
-</a>
-<a class="flex items-center space-x-4 text-white/70 hover:text-white py-3 px-6 transition-all hover:translate-x-1" href="#contact">
-<span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
-<span class="font-label tracking-widest text-xs uppercase">Contact</span>
-</a>
-</nav>
-<div class="px-6 mt-auto">
-<button class="w-full py-3 bg-white text-primary-container font-headline font-bold text-xs uppercase tracking-tighter rounded-xl hover:bg-secondary-fixed transition-colors" onclick="window.print()">
-                Download CV
-            </button>
-<div class="mt-6 flex items-center space-x-2">
+<div class="px-8 mb-10" id="skills-sidebar">
+<span class="font-label text-[10px] tracking-widest text-white/50 block mb-6 uppercase border-b border-white/10 pb-2">Technical Skills</span>
+<div class="space-y-6">
+<div>
+<p class="text-[9px] text-white/40 uppercase tracking-widest mb-3">Cloud &amp; Orchestration</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white/10 text-white rounded font-label text-[9px] uppercase border border-white/5 flex items-center gap-1.5"><i class="devicon-azure-plain"></i> Azure</span>
+<span class="px-2 py-1 bg-white/10 text-white rounded font-label text-[9px] uppercase border border-white/5 flex items-center gap-1.5"><i class="devicon-kubernetes-plain"></i> K8s</span>
+<span class="px-2 py-1 bg-white/10 text-white rounded font-label text-[9px] uppercase border border-white/5 flex items-center gap-1.5"><i class="devicon-redhat-plain"></i> OpenShift</span>
+<span class="px-2 py-1 bg-white/10 text-white rounded font-label text-[9px] uppercase border border-white/5 flex items-center gap-1.5"><i class="devicon-docker-plain"></i> Docker</span>
+</div>
+</div>
+<div>
+<p class="text-[9px] text-white/40 uppercase tracking-widest mb-3">DevOps &amp; Infra</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white/10 text-white rounded font-label text-[9px] uppercase border border-white/5 flex items-center gap-1.5"><i class="devicon-argocd-plain"></i> ArgoCD</span>
+<span class="px-2 py-1 bg-white/10 text-white rounded font-label text-[9px] uppercase border border-white/5">Helm</span>
+<span class="px-2 py-1 bg-white/10 text-white rounded font-label text-[9px] uppercase border border-white/5 flex items-center gap-1.5"><i class="devicon-terraform-plain"></i> Terraform</span>
+<span class="px-2 py-1 bg-white/10 text-white rounded font-label text-[9px] uppercase border border-white/5">CI/CD</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-8 mb-10">
+<span class="font-label text-[10px] tracking-widest text-white/50 block mb-6 uppercase border-b border-white/10 pb-2">Languages</span>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-white text-[11px] font-medium uppercase tracking-wider">Spanish</span>
+<span class="text-white/60 text-[9px] uppercase">Native</span>
+</div>
+<div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-white" style="width: 100%;"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-white text-[11px] font-medium uppercase tracking-wider">English</span>
+<span class="text-white/60 text-[9px] uppercase">B2</span>
+</div>
+<div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-white" style="width: 75%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-8 mt-auto pb-6">
+<button class="w-full py-3 bg-white text-primary-container font-headline font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-secondary-fixed transition-all active:scale-95 mb-6" onclick="window.print()">Print / Save as PDF</button>
+<div class="flex items-center space-x-2">
 <span class="material-symbols-outlined text-green-400 text-xs" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
 <span class="text-white/60 font-label text-[10px] tracking-widest uppercase">Available for Hire</span>
 </div>
 </div>
 </aside>
-<!-- Main Content Shell -->
-<main class="lg:ml-64 pt-24 pb-12 print-container min-h-screen">
+<!-- Main Content -->
+<main class="lg:ml-72 pt-24 pb-12 print-container min-h-screen">
 <div class="max-w-5xl mx-auto px-6 md:px-12">
 <!-- Hero Header -->
 <header class="mb-16">
-<div class="inline-block bg-primary-container text-on-primary-container px-4 py-1 rounded-md mb-6 font-label text-[10px] tracking-[0.2em] uppercase">
-                    Senior DevOps Engineer
-                </div>
-<h2 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mb-6 leading-none">
-                    ENGINEERING <br/>
+<div class="inline-block bg-primary-container text-on-primary-container py-1 rounded-md mb-6 font-label tracking-[0.2em] uppercase text-[12px] font-bold px-6">
+                Kubernetes | OpenShift | Azure | GitOps
+            </div>
+<h2 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter text-on-surface mb-8 leading-none">
+                ENGINEERING <br/>
 <span class="text-secondary">SCALABLE FUTURE</span>
 </h2>
 <div class="grid md:grid-cols-3 gap-8 items-start">
 <div class="md:col-span-2">
 <p class="text-xl text-on-surface-variant font-body leading-relaxed max-w-2xl">
-                            Senior DevOps Engineer with 4+ years of experience specializing in CI/CD, automation, and cloud-native architecture. Expert in orchestrating complex Kubernetes and OpenShift environments with a focus on GitOps methodologies.
-                        </p>
+                        Senior Engineer | Devop | Senior Cloud with 10+ years of specialized experience orchestrating complex Kubernetes (8 clusters) and OpenShift (4 clusters) environments. Expert in cloud-native architecture, Azure infrastructure, and enterprise GitOps methodologies.
+                    </p>
 </div>
 <div class="space-y-4">
-<div class="flex items-center space-x-3 text-on-surface-variant group cursor-pointer">
-<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
-<span class="font-label text-xs uppercase tracking-widest">San Salvador, SV</span>
+<a class="flex items-center space-x-3 text-on-surface-variant group hover:text-primary transition-colors" href="mailto:Endri23@hotmail.com">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="alternate_email">alternate_email</span>
+<span class="font-label text-xs uppercase tracking-widest">Endri23@hotmail.com</span>
+</a>
+<div class="flex items-center space-x-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="forum">forum</span>
+<span class="font-label text-xs uppercase tracking-widest">829-923-3056 (WhatsApp)</span>
 </div>
-<div class="flex items-center space-x-3 text-on-surface-variant group cursor-pointer">
-<span class="material-symbols-outlined text-primary" data-icon="link">link</span>
-<span class="font-label text-xs uppercase tracking-widest">github.com/endricleto</span>
+<div class="flex items-center space-x-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="pin_drop">pin_drop</span>
+<div>
+<p class="font-label text-xs uppercase tracking-widest">santo domingo, dn</p>
+<p class="font-label text-[9px] text-outline uppercase tracking-widest mt-0.5">República Santo Domingo</p>
+</div>
 </div>
 </div>
 </div>
 </header>
-<!-- Expertise Visualization (Bar Charts) -->
-<section class="mb-20 bg-surface-container-low p-8 rounded-full ghost-border">
+<!-- Expertise -->
+<section class="mb-20 bg-surface-container-low p-8 rounded-2xl ghost-border">
 <h3 class="font-label text-[10px] tracking-[0.3em] uppercase text-outline mb-8">Core Competencies</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
-<!-- Kubernetes -->
 <div class="space-y-3">
 <div class="flex justify-between items-end">
 <span class="font-headline font-bold text-sm tracking-tight uppercase">Kubernetes / OpenShift</span>
-<span class="font-label text-[10px] text-secondary">95%</span>
+<span class="font-label text-[10px] text-secondary">98%</span>
 </div>
 <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-primary transition-all duration-1000" style="width: 95%;"></div>
+<div class="h-full bg-primary" style="width: 98%;"></div>
 </div>
 </div>
-<!-- Azure -->
 <div class="space-y-3">
 <div class="flex justify-between items-end">
 <span class="font-headline font-bold text-sm tracking-tight uppercase">Azure Ecosystem</span>
-<span class="font-label text-[10px] text-secondary">90%</span>
+<span class="font-label text-[10px] text-secondary">95%</span>
 </div>
 <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-primary transition-all duration-1000" style="width: 90%;"></div>
+<div class="h-full bg-primary" style="width: 95%;"></div>
 </div>
 </div>
-<!-- CI/CD -->
 <div class="space-y-3">
 <div class="flex justify-between items-end">
 <span class="font-headline font-bold text-sm tracking-tight uppercase">CI/CD &amp; GitOps</span>
-<span class="font-label text-[10px] text-secondary">88%</span>
+<span class="font-label text-[10px] text-secondary">92%</span>
 </div>
 <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-primary transition-all duration-1000" style="width: 88%;"></div>
+<div class="h-full bg-primary" style="width: 92%;"></div>
 </div>
 </div>
-<!-- IaC -->
 <div class="space-y-3">
 <div class="flex justify-between items-end">
 <span class="font-headline font-bold text-sm tracking-tight uppercase">Infrastructure as Code</span>
-<span class="font-label text-[10px] text-secondary">85%</span>
+<span class="font-label text-[10px] text-secondary">88%</span>
 </div>
 <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-primary transition-all duration-1000" style="width: 85%;"></div>
+<div class="h-full bg-primary" style="width: 88%;"></div>
 </div>
 </div>
 </div>
 </section>
-<!-- Experience Bento Grid -->
-<section class="mb-20" id="experience">
-<div class="flex items-center justify-between mb-10">
-<h3 class="font-headline font-extrabold text-3xl tracking-tight">Professional Path</h3>
+<!-- Experience Section -->
+<section class="mb-24" id="experience">
+<div class="flex items-center justify-between mb-12">
+<h3 class="font-headline font-extrabold text-4xl tracking-tight">Professional Experience</h3>
 <span class="hidden md:block h-px flex-grow mx-8 bg-outline-variant/30"></span>
-<span class="font-label text-[10px] tracking-[0.2em] uppercase text-outline">Since 2016</span>
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span> Career Path
+                </span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<!-- Current Role - Large Bento Cell -->
-<div class="md:col-span-8 bg-surface-container-lowest p-8 rounded-xl ghost-border relative overflow-hidden group">
-<div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-<span class="material-symbols-outlined text-8xl" data-icon="cloud_done">cloud_done</span>
+<div class="space-y-8">
+<!-- Humano - IT Coordinator -->
+<div class="bg-surface-container-lowest p-8 md:p-10 rounded-2xl border border-slate-200/50 shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 transition-opacity">
+<i class="devicon-kubernetes-plain text-9xl"></i>
 </div>
-<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col md:flex-row justify-between items-start mb-8 relative z-10">
 <div>
-<h4 class="font-headline font-bold text-2xl mb-1">IT Coordinator</h4>
-<p class="text-secondary font-bold text-sm uppercase tracking-wider">Humano Group</p>
+<h4 class="font-headline font-bold text-3xl mb-2">IT Coordinator</h4>
+<div class="flex items-center space-x-3">
+<span class="text-secondary font-bold text-sm uppercase tracking-wider">Humano Group</span>
+<span class="text-slate-300">•</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">San Salvador</span>
 </div>
-<span class="font-label text-[10px] bg-primary-container text-white px-3 py-1 rounded-md">2021 — PRESENT</span>
 </div>
-<ul class="space-y-4 text-on-surface-variant leading-relaxed">
+<span class="mt-4 md:mt-0 font-label text-[11px] bg-primary-container text-white px-4 py-1.5 rounded-full font-bold uppercase tracking-widest">2021 — PRESENT</span>
+</div>
+<ul class="space-y-5 text-on-surface-variant leading-relaxed relative z-10">
 <li class="flex items-start">
-<span class="material-symbols-outlined text-secondary mr-3 text-lg" data-icon="check_circle">check_circle</span>
-                                Orchestrating 8 Kubernetes and 4 OpenShift production clusters across hybrid environments.
-                            </li>
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Orchestrating 8 Kubernetes production clusters (30+ nodes) and 4 OpenShift clusters across hybrid environments.</span>
+</li>
 <li class="flex items-start">
-<span class="material-symbols-outlined text-secondary mr-3 text-lg" data-icon="check_circle">check_circle</span>
-                                Implemented enterprise GitOps workflows using ArgoCD and Helm for 50+ microservices.
-                            </li>
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Leading GitOps implementation using ArgoCD, Helm, and Azure DevOps CI/CD for enterprise-scale deployments.</span>
+</li>
 <li class="flex items-start">
-<span class="material-symbols-outlined text-secondary mr-3 text-lg" data-icon="check_circle">check_circle</span>
-                                Standardized Azure DevOps CI/CD pipelines, reducing deployment times by 40%.
-                            </li>
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Architecting and managing scalable Azure Infrastructure-as-Code for multi-tenant microservices.</span>
+</li>
 </ul>
 </div>
-<!-- Tech Stack Bento Cell -->
-<div class="md:col-span-4 bg-primary-container p-8 rounded-xl text-white flex flex-col justify-between" id="skills">
+<!-- Infrastructure Analyst -->
+<div class="bg-white p-8 rounded-2xl border border-slate-200/50 shadow-sm relative overflow-hidden group">
+<div class="flex flex-col md:flex-row justify-between items-start mb-8">
 <div>
-<span class="font-label text-[10px] tracking-widest text-on-primary-container block mb-6 uppercase">Tech Stack</span>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-white/10 rounded-md font-label text-[10px] uppercase">Kubernetes</span>
-<span class="px-3 py-1 bg-white/10 rounded-md font-label text-[10px] uppercase">OpenShift</span>
-<span class="px-3 py-1 bg-white/10 rounded-md font-label text-[10px] uppercase">Docker</span>
-<span class="px-3 py-1 bg-white/10 rounded-md font-label text-[10px] uppercase">ArgoCD</span>
-<span class="px-3 py-1 bg-white/10 rounded-md font-label text-[10px] uppercase">Helm</span>
-<span class="px-3 py-1 bg-white/10 rounded-md font-label text-[10px] uppercase">Terraform</span>
-<span class="px-3 py-1 bg-white/10 rounded-md font-label text-[10px] uppercase">Linux</span>
-<span class="px-3 py-1 bg-white/10 rounded-md font-label text-[10px] uppercase">Azure</span>
+<h4 class="font-headline font-bold text-2xl mb-1">Infrastructure Administrator</h4>
+<div class="flex items-center space-x-2">
+<p class="text-secondary font-bold text-xs uppercase tracking-wider">Humano Group</p>
+<span class="text-slate-300">•</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">Hybrid Infrastructure</span>
 </div>
 </div>
-<div class="mt-8">
-<p class="font-headline font-bold text-xl leading-tight">Mastering Cloud Native Standards.</p>
+<span class="mt-2 md:mt-0 font-label text-[10px] text-outline font-bold border border-slate-200 px-3 py-1 rounded-full uppercase">2019 — 2021</span>
 </div>
+<ul class="space-y-5 text-on-surface-variant leading-relaxed">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Managed hybrid data center operations and enterprise storage solutions (Pure Storage, Unity, HPE) for high-availability production.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Implemented centralized monitoring and disaster recovery strategies, significantly improving data resilience and protection.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Architected infrastructure modernization initiatives including cloud adoption (IaaS) and multi-vendor system optimization.</span>
+</li>
+</ul>
 </div>
-<!-- Previous Role 1 -->
-<div class="md:col-span-6 bg-surface-container-low p-8 rounded-xl ghost-border">
-<div class="flex justify-between items-start mb-6">
+<!-- IT Systems Admin -->
+<div class="bg-white p-8 rounded-2xl border border-slate-200/50 shadow-sm relative overflow-hidden group">
+<div class="flex flex-col md:flex-row justify-between items-start mb-8">
 <div>
-<h4 class="font-headline font-bold text-xl mb-1">Infrastructure Analyst</h4>
-<p class="text-secondary font-bold text-sm uppercase tracking-wider">Humano Group</p>
+<h4 class="font-headline font-bold text-2xl mb-1">IT Systems Administrator</h4>
+<div class="flex items-center space-x-2">
+<p class="text-secondary font-bold text-xs uppercase tracking-wider">MAPFRE</p>
+<span class="text-slate-300">•</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">Virtualization &amp; Networks</span>
 </div>
-<span class="font-label text-[10px] text-outline">2019 — 2021</span>
 </div>
-<p class="text-on-surface-variant text-sm leading-relaxed">
-                            Managed hybrid infrastructure monitoring and maintenance for high-availability systems. Implemented centralized logging and performance dashboards.
-                        </p>
+<span class="mt-2 md:mt-0 font-label text-[10px] text-outline font-bold border border-slate-200 px-3 py-1 rounded-full uppercase">2016 — 2019</span>
 </div>
-<!-- Previous Role 2 -->
-<div class="md:col-span-6 bg-surface-container-low p-8 rounded-xl ghost-border">
-<div class="flex justify-between items-start mb-6">
+<ul class="space-y-5 text-on-surface-variant leading-relaxed">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Managed enterprise virtualization platforms (VMware vSphere, Azure IaaS) and diverse server fleets (Windows, Linux, UNIX).</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Administered complex network infrastructure including VPNs, MPLS, and firewalls to ensure high security and operational stability.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Led hybrid cloud optimization projects, implementing robust monitoring and access control across enterprise systems.</span>
+</li>
+</ul>
+</div>
+<!-- IT Support - Hospital -->
+<div class="bg-white p-8 rounded-2xl border border-slate-200/50 shadow-sm relative overflow-hidden group">
+<div class="flex flex-col md:flex-row justify-between items-start mb-8">
 <div>
-<h4 class="font-headline font-bold text-xl mb-1">IT Systems Admin</h4>
-<p class="text-secondary font-bold text-sm uppercase tracking-wider">MAPFRE</p>
+<h4 class="font-headline font-bold text-2xl mb-1">IT Support</h4>
+<div class="flex items-center space-x-2">
+<p class="text-secondary font-bold text-xs uppercase tracking-wider">San Lorenzo Hospital</p>
+<span class="text-slate-300">•</span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">Operations Support</span>
 </div>
-<span class="font-label text-[10px] text-outline">2016 — 2019</span>
 </div>
-<p class="text-on-surface-variant text-sm leading-relaxed">
-                            Full-cycle administration of VMware virtualization stacks and Azure IaaS workloads. Facilitated smooth migration of legacy on-prem services to cloud instances.
-                        </p>
+<span class="mt-2 md:mt-0 font-label text-[10px] text-outline font-bold border border-slate-200 px-3 py-1 rounded-full uppercase">2010 — 2016</span>
+</div>
+<ul class="space-y-5 text-on-surface-variant leading-relaxed">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Ensured business continuity through robust backup strategies and user access management.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Provided comprehensive IT services support for hospital staff and managed critical medical system infrastructure.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-4 mt-0.5" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="text-lg">Maintained 24/7 operational availability for healthcare information systems.</span>
+</li>
+</ul>
 </div>
 </div>
 </section>
-<!-- Certifications & Training -->
+<!-- Featured Projects Section -->
+<section class="mb-24" id="projects">
+<div class="flex items-center justify-between mb-12">
+<h3 class="font-headline font-extrabold text-4xl tracking-tight">Featured Projects</h3>
+<span class="hidden md:block h-px flex-grow mx-8 bg-outline-variant/30"></span>
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="rocket_launch">rocket_launch</span> Impact Delivery
+                </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="bg-surface-container-low p-8 rounded-2xl border border-slate-200/50 hover:border-secondary/30 transition-colors shadow-sm">
+<h4 class="font-headline font-bold text-xl mb-4 leading-tight">Enterprise Database Environment Automation – Nutanix NDB</h4>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Designed and led the automation of database environment provisioning using Nutanix NDB</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Reduced environment deployment time from 48 hours to 35 minutes, significantly improving delivery speed</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Standardized database provisioning processes, increasing consistency and reducing operational errors</span>
+</li>
+</ul>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-low p-8 rounded-2xl border border-slate-200/50 hover:border-secondary/30 transition-colors shadow-sm">
+<h4 class="font-headline font-bold text-xl mb-4 leading-tight">Large-Scale Container Migration (400+ Applications)</h4>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="">Led the migration of over 400 applications from standalone Docker environments to Kubernetes clusters</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="">Enabled improved scalability, resilience, and orchestration across enterprise workloads</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Accelerated adoption of cloud-native architecture and reduced operational complexity</span>
+</li>
+</ul>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-low p-8 rounded-2xl border border-slate-200/50 hover:border-secondary/30 transition-colors shadow-sm">
+<h4 class="font-headline font-bold text-xl mb-4 leading-tight">Enterprise Cloud Migration Initiative</h4>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Contributed to the migration of critical enterprise applications to Microsoft Azure</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Supported modernization of legacy systems into scalable, highly available cloud-based solutions</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Improved system reliability and readiness for cloud-native operations</span>
+</li>
+</ul>
+</div>
+<!-- Project 4 -->
+<div class="bg-surface-container-low p-8 rounded-2xl border border-slate-200/50 hover:border-secondary/30 transition-colors shadow-sm">
+<h4 class="font-headline font-bold text-xl mb-4 leading-tight">CI/CD and Automated Testing Pipeline Implementation</h4>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Designed and implemented end-to-end CI/CD pipelines using Azure DevOps</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Integrated automated unit testing and deployment workflows, improving release quality and speed</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Reduced manual deployment effort and increased consistency across environments</span>
+</li>
+</ul>
+</div>
+<!-- Project 5 -->
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-2xl border border-slate-200/50 hover:border-secondary/30 transition-colors shadow-sm">
+<h4 class="font-headline font-bold text-xl mb-4">Full-Stack Automation with Nutanix Ecosystem (Calm, NDB, Files)</h4>
+<ul class="space-y-3 text-sm text-on-surface-variant grid md:grid-cols-2 gap-x-8">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Led implementation of automation use cases leveraging Nutanix Calm, NDB, and Files</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span>Built end-to-end workflows to deploy complete application environments in a single click</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary text-base mr-3 mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="">Reduced provisioning time from hours to minutes, significantly improving operational efficiency and time-to-market</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Certifications -->
 <section class="mb-20" id="certifications">
-<h3 class="font-headline font-extrabold text-3xl tracking-tight mb-10">Credentials</h3>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="p-6 bg-surface-container-lowest rounded-xl ghost-border flex items-center space-x-4">
-<div class="w-12 h-12 rounded-lg technical-gradient flex items-center justify-center text-white">
-<span class="material-symbols-outlined" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div class="flex items-center justify-between mb-10">
+<h3 class="font-headline font-extrabold text-3xl tracking-tight">Technical Credentials</h3>
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span> Verified Skills
+                </span>
 </div>
-<div>
-<p class="font-headline font-bold text-sm uppercase">AZ-104</p>
-<p class="text-[10px] font-label text-outline uppercase tracking-widest">Azure Administrator</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+<div class="p-6 bg-white rounded-2xl border border-slate-200/50 shadow-sm flex flex-col items-center text-center group hover:border-primary/30 transition-all hover:-translate-y-1">
+<div class="w-14 h-14 mb-4 rounded-xl technical-gradient flex items-center justify-center text-white shadow-lg shadow-blue-900/10">
+<i class="devicon-azure-plain text-2xl"></i>
 </div>
+<p class="font-headline font-bold text-[12px] uppercase">AZ-104</p>
+<p class="text-[9px] font-label text-outline uppercase tracking-widest mt-1">Azure Admin</p>
 </div>
-<div class="p-6 bg-surface-container-lowest rounded-xl ghost-border flex items-center space-x-4">
-<div class="w-12 h-12 rounded-lg technical-gradient flex items-center justify-center text-white">
-<span class="material-symbols-outlined" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div class="p-6 bg-white rounded-2xl border border-slate-200/50 shadow-sm flex flex-col items-center text-center group hover:border-primary/30 transition-all hover:-translate-y-1">
+<div class="w-14 h-14 mb-4 rounded-xl technical-gradient flex items-center justify-center text-white shadow-lg shadow-blue-900/10">
+<span class="material-symbols-outlined text-2xl" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
 </div>
-<div>
-<p class="font-headline font-bold text-sm uppercase">SC-900</p>
-<p class="text-[10px] font-label text-outline uppercase tracking-widest">Azure Security Fundamentals</p>
+<p class="font-headline font-bold text-[12px] uppercase">SC-900</p>
+<p class="text-[9px] font-label text-outline uppercase tracking-widest mt-1">Azure Security</p>
 </div>
+<div class="p-6 bg-white rounded-2xl border border-slate-200/50 shadow-sm flex flex-col items-center text-center group hover:border-primary/30 transition-all hover:-translate-y-1">
+<div class="w-14 h-14 mb-4 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-600/10">
+<i class="devicon-cisco-plain text-2xl"></i>
 </div>
-<div class="p-6 bg-surface-container-lowest rounded-xl ghost-border flex items-center space-x-4">
-<div class="w-12 h-12 rounded-lg technical-gradient flex items-center justify-center text-white">
-<span class="material-symbols-outlined" data-icon="router" style="font-variation-settings: 'FILL' 1;">router</span>
+<p class="font-headline font-bold text-[12px] uppercase">CCNA</p>
+<p class="text-[9px] font-label text-outline uppercase tracking-widest mt-1">Cisco Associate</p>
 </div>
-<div>
-<p class="font-headline font-bold text-sm uppercase">CCNA</p>
-<p class="text-[10px] font-label text-outline uppercase tracking-widest">Cisco Associate</p>
+<div class="p-6 bg-white rounded-2xl border border-slate-200/50 shadow-sm flex flex-col items-center text-center group hover:border-primary/30 transition-all hover:-translate-y-1">
+<div class="w-14 h-14 mb-4 rounded-xl bg-slate-800 flex items-center justify-center text-white shadow-lg shadow-slate-800/10">
+<i class="devicon-kubernetes-plain text-2xl"></i>
 </div>
+<p class="font-headline font-bold text-[12px] uppercase">K8s Training</p>
+<p class="text-[9px] font-label text-outline uppercase tracking-widest mt-1">Orchestration</p>
+</div>
+<div class="p-6 bg-white rounded-2xl border border-slate-200/50 shadow-sm flex flex-col items-center text-center group hover:border-primary/30 transition-all hover:-translate-y-1">
+<div class="w-14 h-14 mb-4 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-lg shadow-red-600/10">
+<i class="devicon-redhat-plain text-2xl"></i>
+</div>
+<p class="font-headline font-bold text-[12px] uppercase">OpenShift</p>
+<p class="text-[9px] font-label text-outline uppercase tracking-widest mt-1">PaaS Training</p>
 </div>
 </div>
 </section>
 <!-- Contact Section -->
 <section class="mb-20 no-print" id="contact">
-<div class="bg-surface-container-low p-12 rounded-xl text-center">
-<h3 class="font-headline font-extrabold text-4xl mb-4">Let's build together.</h3>
-<p class="text-on-surface-variant mb-10 max-w-lg mx-auto">Currently open to senior technical leadership or architect roles in the DevOps space.</p>
-<div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
-<a class="font-label text-xs tracking-widest uppercase text-primary border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors" href="mailto:hello@endricleto.com">
-                            hello@endricleto.com
-                        </a>
-<span class="hidden md:block text-outline-variant">•</span>
-<span class="font-label text-xs tracking-widest uppercase text-primary">
-                            +503 7XXX-XXXX
-                        </span>
+<div class="bg-primary-container p-12 rounded-3xl text-center text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-64 h-64 bg-secondary rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
+</div>
+<h3 class="font-headline font-extrabold text-4xl mb-4 relative z-10">Let's build together.</h3>
+<p class="text-white/60 mb-10 max-w-lg mx-auto relative z-10">Open to senior technical leadership or architect roles specializing in Kubernetes, OpenShift, and Azure ecosystems.</p>
+<div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 relative z-10">
+<a class="flex items-center space-x-2 font-label text-xs tracking-widest uppercase text-white hover:text-secondary-fixed transition-colors" href="mailto:Endri23@hotmail.com">
+<span class="material-symbols-outlined text-sm" data-icon="alternate_email">alternate_email</span>
+<span class="">Endri23@hotmail.com</span>
+</a>
+<span class="hidden md:block text-white/20">•</span>
+<a class="flex items-center space-x-2 font-label text-xs tracking-widest uppercase text-white hover:text-secondary-fixed transition-colors" href="https://wa.me/18299233056">
+<span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
+<span>829-923-3056</span>
+</a>
 </div>
 </div>
 </section>
@@ -366,7 +597,732 @@
 <footer class="w-full py-12 bg-slate-50 border-t border-slate-200 no-print">
 <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto">
 <div class="font-label text-xs tracking-widest uppercase text-slate-600 mb-6 md:mb-0">
-                © 2024 Endri Cleto. Built with Precision.
-            </div>
+            © 2024 Endri Cleto. Built with Precision.
+        </div>
 <div class="flex space-x-8">
-<a class="font-label text-xs tracking-widest uppercase text-slate-
+<a class="font-label text-xs tracking-widest uppercase text-slate-500 hover:text-blue-600 transition-colors" href="#">Privacy Policy</a>
+<a class="font-label text-xs tracking-widest uppercase text-slate-500 hover:text-blue-600 transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Nav -->
+<div class="md:hidden fixed bottom-0 w-full bg-white/95 backdrop-blur-lg border-t border-slate-200/50 flex justify-around py-3 z-50 no-print">
+<a class="flex flex-col items-center space-y-1 text-slate-400" href="#experience">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="text-[8px] font-label uppercase tracking-widest">Experience</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-slate-400" href="#projects">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span class="text-[8px] font-label uppercase tracking-widest">Projects</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-slate-400" href="#skills-sidebar">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="text-[8px] font-label uppercase tracking-widest">Skills</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-slate-400" href="#certifications">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="text-[8px] font-label uppercase tracking-widest">Cert</span>
+</a>
+<button class="flex flex-col items-center space-y-1 text-slate-400" onclick="window.print()">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+<span class="text-[8px] font-label uppercase tracking-widest">PDF</span>
+</button>
+</div>
+</body></html>
+
+<!-- Certifications & Achievements Showcase -->
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Professional Certifications | Endri Cleto - DevOps Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f2f4f6",
+              "error": "#ba1a1a",
+              "on-primary-fixed": "#001b3c",
+              "on-primary": "#ffffff",
+              "surface-dim": "#d8dadc",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              "background": "#f7f9fb",
+              "primary-fixed": "#d6e3ff",
+              "secondary-fixed": "#d6e3ff",
+              "on-background": "#191c1e",
+              "surface-container-high": "#e6e8ea",
+              "on-tertiary-fixed": "#341100",
+              "surface-container": "#eceef0",
+              "on-surface-variant": "#44474e",
+              "surface-container-lowest": "#ffffff",
+              "tertiary": "#160400",
+              "surface": "#f7f9fb",
+              "outline": "#74777f",
+              "inverse-primary": "#aec7f5",
+              "surface-container-highest": "#e0e3e5",
+              "on-tertiary-fixed-variant": "#6c391e",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#3f5882",
+              "tertiary-fixed": "#ffdbcb",
+              "on-secondary-fixed": "#001b3c",
+              "surface-bright": "#f7f9fb",
+              "on-surface": "#191c1e",
+              "on-primary-container": "#7089b3",
+              "primary": "#00091b",
+              "tertiary-container": "#3c1400",
+              "on-tertiary-container": "#b97858",
+              "primary-container": "#002045",
+              "surface-tint": "#465f87",
+              "inverse-surface": "#2d3133",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb692",
+              "surface-variant": "#e0e3e5",
+              "secondary": "#455f88",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#adc7f7",
+              "on-secondary-fixed-variant": "#2d476f",
+              "outline-variant": "#c4c6cf",
+              "on-primary-fixed-variant": "#2e476e",
+              "secondary-container": "#b6d0ff",
+              "primary-fixed-dim": "#aec7f5",
+              "inverse-on-surface": "#eff1f3"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .blueprint-bg {
+        background-image: radial-gradient(circle at 2px 2px, #e0e3e5 1px, transparent 0);
+        background-size: 32px 32px;
+      }
+      .a4-container {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 20mm;
+        margin: auto;
+      }
+      @media print {
+        .no-print { display: none; }
+        body { background: white; }
+        .a4-container { margin: 0; padding: 15mm; width: 100%; box-shadow: none; }
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/15 dark:border-slate-800/15 h-16">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-full">
+<div class="text-xl font-bold tracking-tighter text-blue-900 dark:text-blue-50 font-headline uppercase">
+                DevOps Architect
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-colors font-headline font-bold tracking-tight uppercase text-sm" href="#">Experience</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-colors font-headline font-bold tracking-tight uppercase text-sm" href="#">Skills</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-colors font-headline font-bold tracking-tight uppercase text-sm" href="#">Projects</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-900 dark:border-blue-400 pb-1 font-headline font-bold tracking-tight uppercase text-sm" href="#">Certifications</a>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-xl font-label text-xs tracking-widest uppercase hover:opacity-80 transition-all duration-200 active:scale-[0.98]">
+                Download CV
+            </button>
+</div>
+</nav>
+<main class="pt-24 pb-20 blueprint-bg">
+<div class="a4-container bg-surface-container-lowest shadow-sm border border-outline-variant/15 flex flex-col gap-12">
+<!-- Header Section -->
+<header class="flex flex-col gap-4 border-l-4 border-primary pl-8">
+<p class="font-label text-secondary tracking-widest uppercase text-sm">Credentials Portfolio</p>
+<h1 class="font-headline font-extrabold text-5xl tracking-tighter text-primary-container">
+                    Certifications &amp; <span class="text-secondary">Milestones</span>
+</h1>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">
+                    A comprehensive validation of technical proficiency in cloud architecture, security protocols, networking infrastructure, and enterprise-grade container orchestration.
+                </p>
+</header>
+<!-- Grid Content -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- AZ-104 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4 group hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="cloud">cloud</span>
+</div>
+<span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">ID: AZ-104</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary leading-tight">Microsoft Certified: Azure Administrator Associate</h3>
+<p class="font-label text-xs text-secondary-fixed-variant mt-1 uppercase tracking-wider">Issued by Microsoft • [Date Placeholder]</p>
+</div>
+<p class="text-sm text-on-surface-variant font-body">
+                        Validated expertise in managing Azure infrastructure and RBAC, implementing storage solutions, and monitoring cloud resources.
+                    </p>
+<div class="mt-auto pt-4 flex gap-2">
+<span class="bg-secondary-container/30 text-on-secondary-container font-label text-[10px] px-2 py-1 rounded-md uppercase">IaaS</span>
+<span class="bg-secondary-container/30 text-on-secondary-container font-label text-[10px] px-2 py-1 rounded-md uppercase">Cloud Governance</span>
+</div>
+</div>
+<!-- SC-900 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4 group hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="security">security</span>
+</div>
+<span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">ID: SC-900</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary leading-tight">Microsoft Security, Compliance, and Identity Fundamentals</h3>
+<p class="font-label text-xs text-secondary-fixed-variant mt-1 uppercase tracking-wider">Issued by Microsoft • [Date Placeholder]</p>
+</div>
+<p class="text-sm text-on-surface-variant font-body">
+                        Proficiency in fundamental security concepts across cloud services, including identity management and compliance frameworks.
+                    </p>
+<div class="mt-auto pt-4 flex gap-2">
+<span class="bg-secondary-container/30 text-on-secondary-container font-label text-[10px] px-2 py-1 rounded-md uppercase">Cybersecurity</span>
+<span class="bg-secondary-container/30 text-on-secondary-container font-label text-[10px] px-2 py-1 rounded-md uppercase">Compliance</span>
+</div>
+</div>
+<!-- CCNA -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4 group hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="router">router</span>
+</div>
+<span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">ID: CCNA</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary leading-tight">Cisco Certified Network Associate</h3>
+<p class="font-label text-xs text-secondary-fixed-variant mt-1 uppercase tracking-wider">Issued by Cisco • [Date Placeholder]</p>
+</div>
+<p class="text-sm text-on-surface-variant font-body">
+                        Expertise in networking fundamentals, IP connectivity, IP services, security fundamentals, and automation/programmability.
+                    </p>
+<div class="mt-auto pt-4 flex gap-2">
+<span class="bg-secondary-container/30 text-on-secondary-container font-label text-[10px] px-2 py-1 rounded-md uppercase">Networking</span>
+<span class="bg-secondary-container/30 text-on-secondary-container font-label text-[10px] px-2 py-1 rounded-md uppercase">VLAN/STP</span>
+</div>
+</div>
+<!-- CKA Knowledge -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4 group hover:bg-surface-container transition-colors duration-300">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="hub">hub</span>
+</div>
+<span class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">Skill Verified</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline font-bold text-lg text-primary leading-tight">Kubernetes Training (CKA-level knowledge)</h3>
+<p class="font-label text-xs text-secondary-fixed-variant mt-1 uppercase tracking-wider">Professional Training • [Date Placeholder]</p>
+</div>
+<p class="text-sm text-on-surface-variant font-body">
+                        Validated practical experience in Kubernetes cluster configuration, maintenance, networking, and security troubleshooting.
+                    </p>
+<div class="mt-auto pt-4 flex gap-2">
+<span class="bg-secondary-container/30 text-on-secondary-container font-label text-[10px] px-2 py-1 rounded-md uppercase">Orchestration</span>
+<span class="bg-secondary-container/30 text-on-secondary-container font-label text-[10px] px-2 py-1 rounded-md uppercase">K8s Ops</span>
+</div>
+</div>
+<!-- OpenShift -->
+<div class="md:col-span-2 bg-primary-container text-on-primary p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center">
+<div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="terminal">terminal</span>
+</div>
+<div class="flex flex-col gap-2 text-center md:text-left">
+<h3 class="font-headline font-bold text-2xl">OpenShift Administration Training</h3>
+<p class="font-label text-sm text-on-primary-container uppercase tracking-[0.2em]">Red Hat Training • [Date Placeholder]</p>
+<p class="text-on-primary-fixed-variant text-sm mt-2 max-w-xl">
+                            Advanced administrative capabilities in Red Hat OpenShift Container Platform including cluster installation, operator management, and security context constraints.
+                        </p>
+</div>
+<div class="flex-shrink-0 md:ml-auto">
+<span class="border border-on-primary-container text-on-primary-container font-label text-xs px-4 py-2 rounded-md uppercase">Specialized Track</span>
+</div>
+</div>
+</section>
+<!-- Notable Achievements Bento -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<h2 class="font-headline font-bold text-2xl text-primary shrink-0">Notable Achievements</h2>
+<div class="h-[1px] w-full bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Achievement 1 -->
+<div class="bg-surface-container-high/50 p-6 rounded-xl border border-outline-variant/10 flex flex-col gap-4">
+<span class="font-label text-primary text-4xl font-bold">400+</span>
+<h4 class="font-headline font-bold text-primary leading-tight">Migration Scale</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Successfully architected and executed the migration of 400+ legacy applications to microservices-based Kubernetes architecture.
+                        </p>
+</div>
+<!-- Achievement 2 -->
+<div class="bg-surface-container-high/50 p-6 rounded-xl border border-outline-variant/10 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="sync_alt">sync_alt</span>
+<span class="font-label text-[10px] tracking-widest uppercase">GitOps Standard</span>
+</div>
+<h4 class="font-headline font-bold text-primary leading-tight">ArgoCD Implementation</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Established enterprise-wide GitOps workflows, ensuring 100% declarative state and automated reconciliation across 12 production clusters.
+                        </p>
+</div>
+<!-- Achievement 3 -->
+<div class="bg-surface-container-high/50 p-6 rounded-xl border border-outline-variant/10 flex flex-col gap-4">
+<span class="font-label text-secondary text-4xl font-bold">60%</span>
+<h4 class="font-headline font-bold text-primary leading-tight">CI/CD Efficiency</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Reduced deployment lead time by 60% via CI/CD pipeline optimization and automated regression testing integration.
+                        </p>
+</div>
+</div>
+</section>
+<!-- Verification Footer -->
+<footer class="mt-auto pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex flex-col items-center md:items-start">
+<p class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">Technical Portfolio Authentication</p>
+<p class="text-xs font-body text-outline">Verified by Senior DevOps Engineer Systems • 2024</p>
+</div>
+<div class="flex gap-6">
+<img alt="Microsoft Logo" class="h-8 grayscale opacity-50" data-alt="Microsoft corporate logo in a minimalist monochrome style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtzGT3AZVam7obfsS72zXGO0oLQR7iDoenG1S9AZ0lkE-kP-jywud2XKunQ_uIn_LYiwKx-j7qTESPtxk4PUYwsD16ARcOqODa5RA7zkzfH-uJWb8Ts7G9Iplj2ileOoct6jY-ifClZRezeP0ezt7HmlU1nm-RKH7oss52g73S8UfPp9MOB-zrq38F7sVY01nkcgg3xClA1EioKL1eD7la6qRIEhIwK7DMOBpAKrkNZgh88ScP7HXPK8RZKUppybceGtL41Y0c4Q"/>
+<img alt="Cisco Logo" class="h-8 grayscale opacity-50" data-alt="Cisco corporate logo in a minimalist monochrome style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtN5yIyz7FD_Uwd-H9xqMagEcZZ48-3XiSSKsL1UH95lMTt7Ako1oxIFGCwVrQsc4-8DF3W1PuV0L2q8Sb3pPziYXl1yQGDqr8w-8-DGKrs45xBHQzHQpp9pmUPlHkYpUmvcFbOEhO370yVzGmqzhnSctp9NeDdW25RQn01F_1jD2lQzJgcoUxhdxoiCiMGIVwKEiRxOViKHNHS8z8vdMIsEbRF7QKh7ZJvFtv7lal-VzPsW0NDmegSxymnACCbL3UDSkkEP8FEQ"/>
+<img alt="Red Hat Logo" class="h-8 grayscale opacity-50" data-alt="Red Hat corporate logo in a minimalist monochrome style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvT02y32lzYhoV8Z-0igO-sMfxkzNvFIfw8i-TXJtOqrH0bIBj2O1ya0LzrTzbu-q3-9Ht22Jmt4AfKd7Xam1Ed2VA4ONpiwQkUnKXtD3lzfcp5ECpvv5esw5FmVn8WNnkOP4XFsq12hdrLnKd6fJdVrvY5cr-5NyAcUJxL-KDtq5wemHnEGyK49K42qNJAXziJkkg_aNSwyJnjU8DdAa9k953_SlxZaVfRl0UPqCXHb3gsJXZyyk5HoxV8AJk-MUR0Wo-OBhIBw"/>
+</div>
+</footer>
+</div>
+</main>
+<!-- Site Footer -->
+<footer class="w-full py-8 mt-20 bg-slate-100 dark:bg-slate-900 tonal-shift bg-surface-container-low">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto opacity-70">
+<p class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-slate-600 dark:text-slate-400">
+                © 2024 Senior DevOps Engineer | Built with Blueprint Systems
+            </p>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="text-slate-500 hover:text-blue-900 underline underline-offset-4 transition-all duration-300 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-blue-900 underline underline-offset-4 transition-all duration-300 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-blue-900 underline underline-offset-4 transition-all duration-300 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase" href="#">Stack Overflow</a>
+</div>
+</div>
+</footer>
+</body></html>
+
+<!-- Featured Technical Projects Screen -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skills | ARCHITECT.OS - Endri Cleto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;family=Space_Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#3f5882",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#3c1400",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed": "#341100",
+                        "on-primary-fixed": "#001b3c",
+                        "secondary-fixed-dim": "#adc7f7",
+                        "surface-container": "#eceef0",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#d6e3ff",
+                        "primary-container": "#002045",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed-variant": "#6c391e",
+                        "on-tertiary-container": "#b97858",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#00091b",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "secondary-fixed": "#d6e3ff",
+                        "surface-tint": "#465f87",
+                        "surface-container-low": "#f2f4f6",
+                        "outline": "#74777f",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-fixed-dim": "#aec7f5",
+                        "inverse-surface": "#2d3133",
+                        "secondary": "#455f88",
+                        "on-background": "#191c1e",
+                        "outline-variant": "#c4c6cf",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#2d476f",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-primary-fixed-variant": "#2e476e",
+                        "surface-container-highest": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#7089b3",
+                        "on-surface-variant": "#44474e",
+                        "surface": "#f7f9fb",
+                        "inverse-primary": "#aec7f5",
+                        "tertiary": "#160400",
+                        "on-secondary-fixed": "#001b3c",
+                        "secondary-container": "#b6d0ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-gradient {
+            background: linear-gradient(135deg, #002045 0%, #455f88 100%);
+        }
+        .ghost-border {
+            box-shadow: 0 0 0 1px rgba(196, 198, 207, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- Sidebar (SideNavBar) -->
+<aside class="fixed left-0 top-0 flex flex-col h-full w-72 bg-primary-container text-secondary-container shadow-[4px_0_24px_rgba(0,0,0,0.1)] z-50 overflow-y-auto">
+<!-- Header Profile -->
+<div class="p-8 flex flex-col items-center border-b border-white/5">
+<div class="relative w-32 h-32 mb-6 group">
+<div class="absolute inset-0 rounded-full border-2 border-secondary-container opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<img class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500" data-alt="Professional portrait of a male Senior DevOps Engineer with a confident expression, neutral background, sharp studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGU6oin1UTz3bJOCOS0VJBzjJ97ks5qo-AtV0FmB1QRxV9u3Ntc0bjumruPiGImhBmMetSjRdW6CPHdQWHrgOw8GxGyJmESTl7upaDm-fB1F6oIxC8KRcEEtNttNGkzA2N96mpZELUVvpdAtNsXJ5DvaAtM8gIogN_3IotH3XI0kba7R8f0ckzaQdEQX53O8IC-5oCyeHI2pzsCxYpNUldg8fSCVSn_IjKZ6vAio7mWCPPDpywNguah6738tPuyXPSIu8JCh3HIA"/>
+</div>
+<h1 class="font-headline font-extrabold text-xl tracking-tighter text-white mb-1">Endri Cleto</h1>
+<p class="font-label text-xs tracking-[0.15em] uppercase text-secondary-container/70">Senior DevOps Engineer</p>
+</div>
+<!-- Navigation Section -->
+<nav class="flex-grow py-6">
+<div class="px-6 mb-4">
+<span class="font-label text-[10px] tracking-widest uppercase opacity-40">System Map</span>
+</div>
+<a class="text-slate-400 hover:text-white hover:bg-white/5 py-3 px-6 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-label text-xs tracking-[0.15em] uppercase">Dashboard</span>
+</a>
+<a class="bg-white/10 text-white border-l-4 border-secondary-container py-3 px-6 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-xl">account_tree</span>
+<span class="font-label text-xs tracking-[0.15em] uppercase">Skills</span>
+</a>
+<a class="text-slate-400 hover:text-white hover:bg-white/5 py-3 px-6 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">memory</span>
+<span class="font-label text-xs tracking-[0.15em] uppercase">Infrastructure</span>
+</a>
+<a class="text-slate-400 hover:text-white hover:bg-white/5 py-3 px-6 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">shield</span>
+<span class="font-label text-xs tracking-[0.15em] uppercase">Security</span>
+</a>
+</nav>
+<!-- Sidebar Meta Info -->
+<div class="mt-auto p-8 space-y-6">
+<!-- Languages -->
+<div>
+<span class="font-label text-[10px] tracking-widest uppercase opacity-40 block mb-3">Communication</span>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-300">Spanish</span>
+<span class="font-label text-secondary-container">NATIVE</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-300">English</span>
+<span class="font-label text-secondary-container">B2</span>
+</div>
+</div>
+</div>
+<!-- Contact -->
+<div class="space-y-2">
+<span class="font-label text-[10px] tracking-widest uppercase opacity-40 block mb-3">Endpoint Access</span>
+<div class="flex items-center gap-2 text-[11px] text-slate-400 truncate">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>Endri23@hotmail.com</span>
+</div>
+<div class="flex items-center gap-2 text-[11px] text-slate-400">
+<span class="material-symbols-outlined text-sm">call</span>
+<span>829-923-3056</span>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-secondary-container text-primary-container font-label text-xs tracking-widest uppercase py-4 rounded-xl font-bold hover:bg-white transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                Download CV
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 min-h-screen">
+<!-- Header Anchor (TopAppBar Mockup) -->
+<header class="sticky top-0 z-40 bg-background/80 backdrop-blur-md px-12 py-8 flex justify-between items-end">
+<div>
+<span class="font-label text-xs tracking-[0.2em] text-secondary font-bold uppercase block mb-1">Architecture Overview</span>
+<h2 class="font-headline font-black text-4xl tracking-tighter text-primary">Technical Ecosystem</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 flex items-center justify-center rounded-lg bg-surface-container-low text-primary-container border border-outline-variant/15">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<div class="h-10 w-10 flex items-center justify-center rounded-lg bg-surface-container-low text-primary-container border border-outline-variant/15">
+<span class="material-symbols-outlined">settings</span>
+</div>
+</div>
+<!-- Separation Line -->
+<div class="absolute bottom-0 left-12 right-12 h-[2px] bg-gradient-to-r from-primary-container to-transparent"></div>
+</header>
+<section class="p-12">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Cloud Platforms: Large Focus -->
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/15 relative overflow-hidden group">
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl transition-transform group-hover:scale-110"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">cloud</span>
+<h3 class="font-headline font-bold text-xl text-primary tracking-tight">Cloud Platforms</h3>
+</div>
+<div class="mb-4">
+<span class="font-label text-xs text-secondary-container font-bold bg-primary-container/5 px-3 py-1 rounded-full">AZURE EXPERT</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-md font-label text-[10px] font-bold tracking-widest uppercase ghost-border">Microsoft Azure</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-md font-label text-[10px] tracking-widest uppercase">AKS</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-md font-label text-[10px] tracking-widest uppercase">Virtual Machines</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-md font-label text-[10px] tracking-widest uppercase">VNet</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-md font-label text-[10px] tracking-widest uppercase">Storage</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-md font-label text-[10px] tracking-widest uppercase">RBAC</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-md font-label text-[10px] tracking-widest uppercase">Azure AD</span>
+</div>
+</div>
+</div>
+<!-- Containers: Vertical Focus -->
+<div class="col-span-12 md:col-span-4 bg-primary-container p-8 rounded-xl text-white relative group overflow-hidden">
+<div class="absolute inset-0 technical-gradient opacity-90"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary-container">layers</span>
+<h3 class="font-headline font-bold text-xl tracking-tight">Orchestration</h3>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-white/10 pb-2">
+<span class="font-body text-sm font-medium">Kubernetes</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-between border-b border-white/10 pb-2">
+<span class="font-body text-sm font-medium">OpenShift</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex items-center justify-between border-b border-white/10 pb-2">
+<span class="font-body text-sm font-medium">Docker</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Automation -->
+<div class="col-span-12 md:col-span-6 bg-surface-container-low p-8 rounded-xl border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">sync_alt</span>
+<h3 class="font-headline font-bold text-xl text-primary tracking-tight">DevOps &amp; Automation</h3>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<span class="font-label text-[10px] text-secondary block mb-1">PLATFORM</span>
+<p class="font-body font-bold text-primary">Azure DevOps</p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<span class="font-label text-[10px] text-secondary block mb-1">STRATEGY</span>
+<p class="font-body font-bold text-primary">CI/CD Pipelines</p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<span class="font-label text-[10px] text-secondary block mb-1">GITOPS</span>
+<p class="font-body font-bold text-primary">ArgoCD</p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<span class="font-label text-[10px] text-secondary block mb-1">PACKAGING</span>
+<p class="font-body font-bold text-primary">Helm Charts</p>
+</div>
+</div>
+</div>
+<!-- Infrastructure -->
+<div class="col-span-12 md:col-span-6 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/15 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">dns</span>
+<h3 class="font-headline font-bold text-xl text-primary tracking-tight">Infrastructure &amp; Virtualization</h3>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-6 leading-relaxed">Experienced in hybrid-cloud deployments and enterprise virtualization stacks including hyperconverged infrastructure.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-label text-xs font-bold text-primary tracking-widest uppercase">VMware vSphere</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-label text-xs font-bold text-primary tracking-widest uppercase">Nutanix (NDB, NKE)</span>
+</div>
+</div>
+</div>
+<!-- Networking -->
+<div class="col-span-12 md:col-span-7 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/15">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">hub</span>
+<h3 class="font-headline font-bold text-xl text-primary tracking-tight">Networking &amp; Security</h3>
+</div>
+<span class="font-label text-[10px] tracking-widest text-on-surface-variant/40">v2.4 SECURE_LAYER</span>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="text-center group">
+<div class="w-full aspect-square flex items-center justify-center bg-surface-container-low rounded-xl mb-2 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary-container">vpn_lock</span>
+</div>
+<span class="font-label text-[10px] font-bold">VPN</span>
+</div>
+<div class="text-center group">
+<div class="w-full aspect-square flex items-center justify-center bg-surface-container-low rounded-xl mb-2 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary-container">shield_lock</span>
+</div>
+<span class="font-label text-[10px] font-bold">NSG</span>
+</div>
+<div class="text-center group">
+<div class="w-full aspect-square flex items-center justify-center bg-surface-container-low rounded-xl mb-2 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary-container">lan</span>
+</div>
+<span class="font-label text-[10px] font-bold">PEERING</span>
+</div>
+<div class="text-center group">
+<div class="w-full aspect-square flex items-center justify-center bg-surface-container-low rounded-xl mb-2 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary-container">wall_art</span>
+</div>
+<span class="font-label text-[10px] font-bold">FIREWALLS</span>
+</div>
+</div>
+</div>
+<!-- Operating Systems -->
+<div class="col-span-12 md:col-span-5 bg-surface-container-low p-8 rounded-xl border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">terminal</span>
+<h3 class="font-headline font-bold text-xl text-primary tracking-tight">Operating Systems</h3>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">developer_board</span>
+</div>
+<div>
+<p class="font-headline font-bold text-primary">Linux Distribution</p>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-wider">Ubuntu, CentOS, RHEL</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">window</span>
+</div>
+<div>
+<p class="font-headline font-bold text-primary">Windows Server</p>
+<p class="font-label text-[10px] text-on-surface-variant uppercase tracking-wider">AD, IIS, Powershell</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Competencies Section -->
+<section class="px-12 pb-24">
+<div class="mb-10">
+<span class="font-label text-xs tracking-[0.2em] text-secondary font-bold uppercase block mb-1">Performance Metrics</span>
+<h2 class="font-headline font-black text-4xl tracking-tighter text-primary">Core Competencies</h2>
+<div class="h-[2px] w-24 bg-primary-container mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Skill Progress Bars -->
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline font-bold text-primary">Kubernetes / Containers</span>
+<span class="font-label text-secondary font-bold">95%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline font-bold text-primary">Azure Cloud Solutions</span>
+<span class="font-label text-secondary font-bold">90%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline font-bold text-primary">CI/CD Pipelines</span>
+<span class="font-label text-secondary font-bold">88%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline font-bold text-primary">Infrastructure as Code</span>
+<span class="font-label text-secondary font-bold">85%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Graphic Decoration -->
+<div class="mt-20 flex justify-center opacity-20 select-none">
+<div class="flex gap-4">
+<div class="w-1 h-12 bg-primary-container"></div>
+<div class="w-1 h-8 bg-primary-container/60"></div>
+<div class="w-1 h-16 bg-primary-container"></div>
+<div class="w-1 h-10 bg-primary-container/40"></div>
+<div class="w-1 h-14 bg-primary-container"></div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="w-full py-8 px-12 flex flex-col md:flex-row justify-between items-center border-t border-slate-200 bg-surface-container-low text-on-surface-variant">
+<span class="font-label text-[10px] tracking-widest uppercase">© 2024 System Architect Portfolio • Senior DevOps Engineering</span>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="font-label text-[10px] tracking-widest uppercase hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-label text-[10px] tracking-widest uppercase hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="font-label text-[10px] tracking-widest uppercase hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+</footer>
+</main>
+</body></html>
