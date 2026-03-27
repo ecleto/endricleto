@@ -83,38 +83,11 @@
             vertical-align: middle;
         }
         @media print {
-            @page {
-                size: A4;
-                margin: 0;
-            }
-            body {
-                background: white !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .no-print {
-                display: none !important;
-            }
-            .print-container {
-                width: auto !important;
-                margin-left: 18rem !important;
-                padding-top: 2rem !important;
-            }
-            aside {
-                display: flex !important;
-                position: fixed !important;
-                height: 100% !important;
-                width: 18rem !important;
-                top: 0 !important;
-                left: 0 !important;
-                z-index: 50 !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .bg-primary, .bg-primary-container, .technical-gradient {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
+            body { background: white !important; -webkit-print-color-adjust: exact; }
+            .no-print { display: none !important; }
+            .print-container { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+            .lg-sidebar-print { display: flex !important; position: absolute !important; }
+            @page { size: A4; margin: 0; }
         }
         .technical-gradient {
             background: linear-gradient(135deg, #002045 0%, #455f88 100%);
@@ -142,7 +115,7 @@
 <a class="text-slate-500 hover:text-slate-900 transition-colors" href="#certifications">Certifications</a>
 </div>
 <div class="flex items-center space-x-4">
-<button class="p-2 hover:bg-slate-100/50 rounded-lg transition-transform active:scale-95" onclick="window.print()" title="Print / Save as PDF">
+<button class="p-2 hover:bg-slate-100/50 rounded-lg transition-transform active:scale-95" onclick="window.print()" title="Download CV">
 <span class="material-symbols-outlined text-slate-900" data-icon="download">download</span>
 </button>
 <a class="p-2 hover:bg-slate-100/50 rounded-lg transition-transform active:scale-95" href="mailto:Endri23@hotmail.com">
@@ -152,10 +125,10 @@
 </div>
 </nav>
 <!-- Sidebar -->
-<aside class="fixed left-0 top-0 h-full w-72 z-40 bg-gradient-to-br from-[#002045] to-[#455f88] flex flex-col py-10 overflow-y-auto sidebar-scrollbar hidden lg:flex no-print shadow-2xl">
-<div class="px-8 flex flex-col items-center text-center mb-12">
-<div class="w-24 h-24 rounded-full bg-white/10 flex items-center justify-center mb-6 overflow-hidden border-2 border-white/20 shadow-lg">
-<img alt="Endri Cleto" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_uxkFxTGPrROcEcCy8dnignUUnu66RImBhskL0uz5Bz-5glcwH4gUr1jCRSf9xlkfyzsIyqohd_eolGTwymBdGw_e6EztcmC0IFMWWFacLBflztUx1lSnlvX0dbC4GNe6PlECmfjz-s0KbDYWYIi3LElU_N3NF3P_SCkxmtMmdEjOT9b_4npsCdme9UTjJlklmzbFSdxh9foFQG4sF_Hj_tk05-5pR4pu3NzZ0csGrtBz4oQX1ENY2TjUsFsxvq0j-RmErL8onw"/>
+<aside class="fixed left-0 top-0 h-full w-72 z-40 bg-gradient-to-br from-[#002045] to-[#455f88] flex flex-col overflow-y-auto sidebar-scrollbar hidden lg:flex no-print shadow-2xl py-16">
+<div class="px-8 flex flex-col items-center text-center mb-10 mt-8">
+<div class="w-32 h-32 rounded-full bg-white/10 flex items-center justify-center mb-6 overflow-hidden border-2 border-white/20 shadow-lg shrink-0">
+<img alt="Endri Cleto" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ujaOGL9oNN2lvRAbjmGylLpyiyO94yDF18JH5cb8DzuH-8qfqPHEFQw7iJie_L_VfnhcZJcvz9z3qj7icQyETjAM7aqyhmNB7ZrsgCRIu0At0EkCso5B1GM9DksrIMzo8BeXNA-I3_CFCcrE1imJkHyCKuFbnCY1Uv3stwf57j98-L1ipu33pH7ivhatqScTpfHDMYGBNcvjC-dPgMMEyy2jpI8lWeaZt32UFjQHfkvT6VuPnwcRmqxpnqkCywIyabR1CX6K7bq"/>
 </div>
 <h1 class="text-white font-headline font-extrabold tracking-tight text-2xl uppercase leading-tight">Endri Cleto</h1>
 <p class="text-white/70 font-label tracking-[0.2em] text-[10px] uppercase mt-2">Senior it Engineer</p>
@@ -207,7 +180,9 @@
 </div>
 </div>
 <div class="px-8 mt-auto pb-6">
-<button class="w-full py-3 bg-white text-primary-container font-headline font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-secondary-fixed transition-all active:scale-95 mb-6" onclick="window.print()">Print / Save as PDF</button>
+<button class="w-full py-3 bg-white text-primary-container font-headline font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-secondary-fixed transition-all active:scale-95 mb-6" onclick="window.print()">
+            Download CV
+        </button>
 <div class="flex items-center space-x-2">
 <span class="material-symbols-outlined text-green-400 text-xs" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
 <span class="text-white/60 font-label text-[10px] tracking-widest uppercase">Available for Hire</span>
